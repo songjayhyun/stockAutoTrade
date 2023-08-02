@@ -167,7 +167,7 @@ def notifyCurrentBalance():
         "FUND_STTL_ICLD_YN": "N",
         "FNCG_AMT_AUTO_RDPT_YN": "N",
         "PRCS_DVSN": "01",
-        "CTX_AREA_FK100": "",
+        "CTX_AREA_FK100": "", 
         "CTX_AREA_NK100": ""
     }
     
@@ -188,7 +188,6 @@ def notifyCurrentBalance():
     sendDiscordMsg(f"총 평가 금액: {evaluation[0]['tot_evlu_amt']}원")
     time.sleep(0.1)
     sendDiscordMsg(f"=================")
-
 
 def getBalance():
     PATH = "uapi/domestic-stock/v1/trading/inquire-psbl-order"
