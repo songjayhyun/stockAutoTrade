@@ -326,7 +326,7 @@ try:
                     if sym in boughtList:
                         continue
 
-                    if rsi <= oversold_threshold: # RSI가 70 이상이면 과매수 상태로 매수
+                    if rsi >= overbought_threshold: # RSI가 70 이상이면 과매수 상태로 매도
                         buy_qty = 0  # 매수할 수량 초기화
                         buy_qty = int(buyAmount // currentPrice)
                         if buy_qty > 0:
@@ -339,7 +339,7 @@ try:
                                 notifyCurrentBalance()
                     time.sleep(1)
 
-                if rsi >= overbought_threshold: # RSI가 30 이하이면 과매도 상태로 매도
+                if rsi <= oversold_threshold: # RSI가 30 이하이면 과매도 상태로 매수
                     if soldOut == False:
                         stockDict = getStockBalance()
                         sellStock(sym, stockDict[sym])
